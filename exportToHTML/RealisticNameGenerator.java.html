@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>RealisticNameGenerator.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+.s4 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+RealisticNameGenerator.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java.util.Random</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">RealisticNameGenerator {</span>
+
+    <span class="s0">private static final </span><span class="s1">String[] lastNames = {</span>
+            <span class="s2">&quot;Johnson&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Williams&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Brown&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Jones&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Garcia&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Miller&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Davis&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Rodriguez&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Martinez&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Hernandez&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Lopez&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Gonzalez&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Wilson&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Anderson&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Thomas&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Taylor&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Moore&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Jackson&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Martin&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Lee&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Irakliotis&quot;</span><span class="s1">}</span><span class="s0">;</span>
+
+    <span class="s0">private static final </span><span class="s1">String[] firstNamesMale = {</span>
+            <span class="s2">&quot;James&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;John&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Robert&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Michael&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;William&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;David&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Richard&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Charles&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Joseph&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Thomas&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Christopher&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Daniel&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Paul&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Mark&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Donald&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;George&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Kenneth&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Steven&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Edward&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Brian&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Leo&quot;</span><span class="s1">}</span><span class="s0">;</span>
+
+    <span class="s0">private static final </span><span class="s1">String[] firstNameFemale = {</span>
+            <span class="s2">&quot;Mary&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Patricia&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Linda&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Barbara&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Elizabeth&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Jennifer&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Maria&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Susan&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Margaret&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Dorothy&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Lisa&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Nancy&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Karen&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Betty&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Helen&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Sandra&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Donna&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Carol&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Ruth&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Sharon&quot;</span><span class="s0">,</span>
+            <span class="s2">&quot;Michelle&quot;</span><span class="s1">}</span><span class="s0">;</span>
+
+    <span class="s0">public </span><span class="s1">String[] realisticName () {</span>
+
+        <span class="s0">int </span><span class="s1">lastNamesCount = lastNames.length</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">maleFirstNamesCount = firstNamesMale.length</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">femaleFirstNamesCount = firstNameFemale.length</span><span class="s0">;</span>
+
+        <span class="s0">int </span><span class="s1">gender</span><span class="s0">;</span>
+
+        <span class="s1">String[] name = </span><span class="s0">new </span><span class="s1">String[</span><span class="s3">2</span><span class="s1">]</span><span class="s0">;</span>
+
+        <span class="s1">Random rand = </span><span class="s0">new </span><span class="s1">Random()</span><span class="s0">;</span>
+
+        <span class="s1">gender = rand.nextInt(</span><span class="s3">2</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">name[</span><span class="s3">1</span><span class="s1">] = lastNames[rand.nextInt(lastNamesCount)]</span><span class="s0">;</span>
+
+        <span class="s0">if </span><span class="s1">(gender == </span><span class="s3">0</span><span class="s1">) {                     </span><span class="s4">// female first name</span>
+            <span class="s1">name[</span><span class="s3">0</span><span class="s1">] = firstNameFemale[rand.nextInt(femaleFirstNamesCount)]</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{                               </span><span class="s4">// male first name</span>
+            <span class="s1">name[</span><span class="s3">0</span><span class="s1">] = firstNamesMale[rand.nextInt(maleFirstNamesCount)]</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s0">return </span><span class="s1">name</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s0">final int </span><span class="s1">N = </span><span class="s3">20</span><span class="s0">;</span>
+        <span class="s1">RealisticNameGenerator realNames = </span><span class="s0">new </span><span class="s1">RealisticNameGenerator()</span><span class="s0">;</span>
+        <span class="s1">String[] realName = </span><span class="s0">new </span><span class="s1">String[</span><span class="s3">2</span><span class="s1">]</span><span class="s0">;</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s3">0</span><span class="s0">;  </span><span class="s1">i&lt;N</span><span class="s0">; </span><span class="s1">i++) {</span>
+            <span class="s1">realName = realNames.realisticName()</span><span class="s0">;</span>
+            <span class="s1">System.out.println(realName[</span><span class="s3">0</span><span class="s1">] + </span><span class="s2">&quot; &quot; </span><span class="s1">+ realName[</span><span class="s3">1</span><span class="s1">])</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
